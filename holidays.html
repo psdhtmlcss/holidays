@@ -49,6 +49,15 @@
       <div id="graph" class="my-holidays-graph__graph">
         
       </div>
+      <template id="holidayPopup">
+        <div class="holiday-popup">
+          <div class="holiday-popup__top">
+            <span class="start-day">12 апреля</span> – <span class="end-day">6 мая</span>
+            <div class="total-days">36 дней</div>
+          </div>
+          <div class="holiday-popup__link"><a href="">Скорректировать</a></div>
+        </div>
+      </template>
     </div>
 
     <!-- My holidays list -->
@@ -101,6 +110,7 @@
   </div>
   <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/isLeapYear.js"></script>
+  <script src="declination.js"></script>
   <script src="graph.js"></script>
 </body>
 </html>

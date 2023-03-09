@@ -195,6 +195,57 @@
   }
 }
 
+// HOLIDAY POPUP
+.holiday-popup {
+  background-color: #FBFBFB;
+  border-radius: 5px;
+  padding: 10px 17px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .13);
+  width: 194px;
+  position: relative;
+  z-index: 1000;
+  display: none;
+
+  // &::before {
+  //   content: "";
+  //   display: block;
+  //   box-sizing: border-box;
+  //   width: 26px;
+  //   height: 26px;
+  //   background-color: #FBFBFB;
+  //   box-shadow: 0 1px 4px rgba(0, 0, 0, .13);
+  //   position: absolute;
+  //   bottom: -13px;
+  //   left: 50%;
+  //   margin-left: -13px;
+  //   transform: rotate(45deg);
+  //   z-index: -1;
+  // }
+
+  &:hover {
+    display: block!important;
+  }
+
+  &__top {
+    color: #717A84;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 600;
+    margin-bottom: 10px;
+
+    .total-days {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 15px;
+      margin-top: 1px;
+    }
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}
+
 // MY HOLIDAYS LIST
 .my-holidays-list {
   background-color: #F9F9F9;
