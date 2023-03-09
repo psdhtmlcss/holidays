@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://bitrix.axbit.ru/bitrix/templates/bitrix24/template_styles.min.css?165391683184047">
+  <link rel="stylesheet" href="https://bitrix.axbit.ru/bitrix/components/bitrix/main.ui.filter/templates/.default/style.min.css?165391673261480">
+  <link rel="stylesheet" href="holidays.min.css">
+  <title>Отпуска</title>
+</head>
+<body style="padding: 50px;">
+  <div class="holidays-page">
+    <!-- Top block -->
+    <div class="holidays-page__block holidays-top">
+      <div class="holidays-top__left">
+        <h1>Отпуска <small>Здесь вы можете посмотреть свои отпуска</small></h1>
+        <div class="holidays-top__buttons">
+          <div class="radio-button">
+            <input type="radio" name="holidays" id="myHolidays" checked>
+            <label for="myHolidays">Мои</label>
+          </div>
+          <div class="radio-button">
+            <input type="radio" name="holidays" id="otherHolidays">
+            <label for="otherHolidays">Все сотрудники</label>
+          </div>
+        </div>
+      </div>
+      <div class="holidays-top__right">
+        <a href="" class="btn btn-white">Скорректировать текущие</a>
+        <a href="" class="btn btn-blue">Запланировать отпуск</a>
+      </div>
+    </div>
+
+    <!-- My holidays graph -->
+    <div class="holidays-page__block my-holidays-graph">
+      <h2>Мои отпуска (график)</h2>
+      <div class="my-holidays-graph__buttons">
+        <div class="radio-button">
+          <input type="radio" name="myHolidays" id="year" checked>
+          <label for="year">Год</label>
+        </div>
+        <div class="radio-button">
+          <input type="radio" name="myHolidays" id="month">
+          <label for="month">Месяц</label>
+        </div>
+      </div>
+      <h3>2023</h3>
+      <div id="graph" class="my-holidays-graph__graph">
+        
+      </div>
+    </div>
+
+    <!-- My holidays list -->
+    <div class="holidays-page__block my-holidays-list">
+      <h2>Мои отпуска (список 2023)</h2>
+      <div class="my-holidays-list__info">Незапланированных дней: <strong>24</strong></div>
+      <ul class="holidays-list">
+        <li class="holidays-list__item">
+          <div class="holidays-list__left">
+            <div class="period">16 января - 12 февраля</div>
+            <div class="count">25 дней</div>
+          </div>
+          <div class="holidays-list__right">
+            <a href="" class="btn btn-white">Скорректировать</a>
+            <a href="" class="btn btn-blue">Подтвердить отпуск</a>
+          </div>
+        </li>
+        <li class="holidays-list__item">
+          <div class="holidays-list__left">
+            <div class="period">16 января - 12 февраля</div>
+            <div class="count">25 дней</div>
+          </div>
+          <div class="holidays-list__right">
+            <a href="" class="btn btn-white">Скорректировать</a>
+            <a href="" class="btn btn-blue">Подтвердить отпуск</a>
+          </div>
+        </li>
+        <li class="holidays-list__item">
+          <div class="holidays-list__left">
+            <div class="period">16 января - 12 февраля</div>
+            <div class="count">25 дней</div>
+          </div>
+          <div class="holidays-list__right">
+            <a href="" class="btn btn-white">Скорректировать</a>
+            <a href="" class="btn btn-blue">Подтвердить отпуск</a>
+          </div>
+        </li>
+        <li class="holidays-list__item">
+          <div class="holidays-list__left">
+            <div class="period">16 января - 12 февраля</div>
+            <div class="count">25 дней</div>
+          </div>
+          <div class="holidays-list__right">
+            <a href="" class="btn btn-white">Скорректировать</a>
+            <a href="" class="btn btn-blue">Подтвердить отпуск</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/isLeapYear.js"></script>
+  <script src="graph.js"></script>
+</body>
+</html>
