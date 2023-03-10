@@ -39,6 +39,8 @@
       year.append(month);
     })
     graph.append(year);
+    year.addEventListener('mouseover', onYearOver);
+    year.addEventListener('mouseout', onYearOut);
   };
 
   const fillHolidays = (data) => {
@@ -50,26 +52,31 @@
       const diff = dayjs(item.end).diff(dayjs(item.start), 'day');
 
       createPopup(startMonth.dataset.month, startDay.dataset.day, endMonth.dataset.month, endDay.dataset.day, diff);
-      startMonth.addEventListener('mouseover', onStartMonthOver);
-      startMonth.addEventListener('mouseout', onStartMonthOut);
 
       if (startMonth.dataset.month === endMonth.dataset.month) {
         for (let i = Number(startDay.dataset.day) + 1; i < Number(startDay.dataset.day) + diff; i++) {
-          startMonth.querySelector(`span[data-day="${i}"]`).classList.add('holiday');
+          const day = startMonth.querySelector(`span[data-day="${i}"]`);
+          console.log(Math.round(diff / 2));
+          day.classList.add('holiday');
+          day.dataset.holidayMonth = startMonth.dataset.month;
         }
       } else {
         for (let i = Number(startDay.dataset.day) + 1; i <= countDaysInMonth[startMonth.dataset.month]; i++) {
-          startMonth.querySelector(`span[data-day="${i}"]`).classList.add('holiday');
+          const day = startMonth.querySelector(`span[data-day="${i}"]`);
+          day.classList.add('holiday');
+          day.dataset.holidayMonth = startMonth.dataset.month;
         }
         for (let i = Number(endDay.dataset.day) - 1; i >= 1; i--) {
-          endMonth.querySelector(`span[data-day="${i}"]`).classList.add('holiday');
+          const day = endMonth.querySelector(`span[data-day="${i}"]`);
+          day.classList.add('holiday');
+          day.dataset.holidayMonth = startMonth.dataset.month;
         }
-        endMonth.addEventListener('mouseover', onEndMonthOver);
-        endMonth.addEventListener('mouseout', onEndMonthOut);
       }
       
       startDay.classList.add('start-day', 'holiday');
+      startDay.dataset.holidayMonth = startMonth.dataset.month;
       endDay.classList.add('end-day', 'holiday');
+      endDay.dataset.holidayMonth = startMonth.dataset.month;
     })
   };
 
@@ -87,39 +94,21 @@
     graph.append(popup);
   };
 
-  const onStartMonthOver = (evt) => {
-    // console.log('current target', evt.currentTarget);
+  const onYearOver = (evt) => {
     if (!evt.target.classList.contains('holiday')) {
       return;
-    } 
-    // console.log('target', evt.target);
-    graph.querySelector(`.holiday-popup[data-popup-month="${evt.currentTarget.dataset.month}"]`).style.display = 'block';
+    }
+    graph.querySelector(`.holiday-popup[data-popup-month="${evt.target.dataset.holidayMonth}"]`).style.display = 'block';
   };
 
-  const onStartMonthOut = (evt) => {
-    
+  const onYearOut = (evt) => {
     if (!evt.target.classList.contains('holiday')) {
       return;
-    } 
-    console.log('current target', evt.currentTarget.dataset.month);
-    const currentMonth = graph.querySelector(`.holiday-popup[data-popup-month="${evt.currentTarget.dataset.month}"]`);
+    }
+    const openPopup = graph.querySelector(`.holiday-popup[data-popup-month="${evt.target.dataset.holidayMonth}"]`);
     setTimeout(() => {
-      currentMonth.style.display = 'none';
+      openPopup.style.display = 'none';
     }, SEC_IN_MS);
-  };
-
-  const onEndMonthOver = (evt) => {
-    if (!evt.target.classList.contains('holiday')) {
-      return;
-    }
-    // console.log(evt.target);
-  };
-
-  const onEndMonthOut = (evt) => {
-    if (!evt.target.classList.contains('holiday')) {
-      return;
-    }
-    // console.log(evt.target);
   };
 
   dayjs.extend(window.dayjs_plugin_isLeapYear);
