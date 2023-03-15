@@ -58,8 +58,11 @@
 
     popup.style.marginLeft = `-${(POPUP_WIDTH - periodWidth) / 2}px`;
     start.textContent = `${startDay} ${monthsCases[startMonth]}`;
-    end.textContent = `${endDay} ${monthsCases[endMonth]}`;
-    total.textContent = returnDeclination(diff, 'день', 'дня', 'дней');
+    if (diff !== 0) {
+      end.textContent = `– ${endDay} ${monthsCases[endMonth]}`;
+    }
+    
+    total.textContent = returnDeclination(diff === 0 ? 1 : diff, 'день', 'дня', 'дней');
 
     return popup;
   };
