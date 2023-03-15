@@ -7,22 +7,9 @@
   const monthsCases = ['Января', 'Февраля', 'Марта', 'Апреля', 'Мая', 'Июня', 'Июля', 'Августа', 'Сентября', 'Октября', 'Ноября', 'Декабря'];
   const popupTemplate = document.querySelector('#holidayPopup').content.querySelector('.holiday-popup-wrapper');
 
-  const holidaysData = [
-    {
-      start: '2023-09-15',
-      end: '2023-10-10'
-    },
-    {
-      start: '2023-06-15',
-      end: '2023-07-15'
-    },
-    {
-      start: '2023-11-15',
-      end: '2023-11-25'
-    }
-  ];
-
   let countDaysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+  dayjs.extend(window.dayjs_plugin_isLeapYear);
 
   const renderYear = (arr) => {
     const year = document.createElement('ul');
@@ -49,7 +36,7 @@
       const endDay = endMonth.querySelector(`span[data-day="${dayjs(item.end).date()}"]`);
       const diff = dayjs(item.end).diff(dayjs(item.start), 'day');
 
-      const periodWidth = Number(startDay.offsetWidth) * diff;
+      const periodWidth = Number(startDay.offsetWidth) * (diff === 0 ? 1 : diff);
       startDay.append(createPeriod(periodWidth));
       startDay.querySelector('.holidays').append(createPopup(startMonth.dataset.month, startDay.dataset.day, endMonth.dataset.month, endDay.dataset.day, diff, periodWidth));
       
@@ -77,13 +64,17 @@
     return popup;
   };
 
-  dayjs.extend(window.dayjs_plugin_isLeapYear);
+  const renderGraph = (data) => {
+    if (dayjs(currentYear).isLeapYear()) {
+      countDaysInMonth.splice(1, 1, 29);
+    }
 
-  if (dayjs(currentYear).isLeapYear()) {
-    countDaysInMonth.splice(1, 1, 29);
-  }
+    renderYear(countDaysInMonth);
+    createHolidays(data);
+  };
 
-  renderYear(countDaysInMonth);
-  createHolidays(holidaysData);
+  window.renderGraph = {
+    render: renderGraph
+  };
 
 })();
