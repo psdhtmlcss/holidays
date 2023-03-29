@@ -1,0 +1,76 @@
+.holidays-page {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #535C69;
+
+  &__block {
+    padding: 21px;
+    background-color: #EEF2F4;
+    border-radius: 23px;
+
+    & + & {
+      margin-top: 14px;
+    }
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    width: auto;
+    height: 61px;
+    padding: 0 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    font: 500 16px/17px "Inter", sans-serif;
+
+    &-white {
+      color: #2067B0;
+      background-color: #fff;
+    }
+
+    &-blue {
+      color: white;
+      background-color: #2067B0;
+    }
+  }
+
+  .radio-button {
+    display: inline-flex;
+  }
+
+  .radio-button label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 31px;
+    padding: 0 16px;
+    border-radius: 74px;
+    background-color: transparent;
+    color: #717A84;
+    border: 1px solid #717A84;
+    font: 600 12px/15px 'Inter', sans-serif;
+    cursor: pointer;
+    transition: all .2s ease;
+  }
+
+  .radio-button input:checked + label,
+  .radio-button label:hover {
+    background-color: #2067B0;
+    border-color: #2067B0;
+    color: white;
+  }
+
+  .radio-button input[type="radio"] {
+    display: none;
+  }
+
+  h2 {
+    font: 500 16px/17px "Inter", sans-serif;
+    margin: 0 0 12px;
+  }
+}

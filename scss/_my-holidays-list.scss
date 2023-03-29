@@ -1,0 +1,53 @@
+.my-holidays-list {
+  background-color: #F9F9F9;
+
+  &__info {
+    display: flex;
+    margin-bottom: 16px;
+    font-size: 20px;
+    line-height: 21px;
+    font-weight: 500;
+    color: #2067B0;
+
+    &>div {
+      width: 50%;
+    }
+  }
+
+  .holidays-list {
+    margin: 0;
+    padding: 0;
+
+    &__right {
+      display: none;
+      gap: 8px;
+    }
+
+    &__item {
+      list-style-type: none;
+      display: flex;
+      justify-content: space-between;
+      padding: 16px 0;
+      border-bottom: 2px solid #EEF2F4;
+
+      &:hover {
+        .holidays-list__right {
+          display: flex;
+        }
+      }
+    }
+
+    .period {
+      font-size: 18px;
+      line-height: 19px;
+      font-weight: 600;
+      margin-bottom: 11px;
+    }
+
+    .count {
+      font-size: 15px;
+      line-height: 16px;
+      color: #717A84;
+    }
+  }
+}

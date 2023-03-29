@@ -1,0 +1,107 @@
+.employees-holidays-graph__row {
+  display: grid;
+  grid-template-columns: 200px repeat(12, 1fr);
+  
+
+  &>div {
+    padding: 6px 9px;
+    border-right: 1px solid #d9d9d9;
+  }
+
+  &>div:first-child {
+    border-radius: 23px 0 0 23px;
+    padding-left: 6px;
+  }
+
+  &>div:last-child {
+    border-radius: 0 23px 23px 0;
+    border-right: 0;
+    padding-right: 6px;
+  }
+
+  &:hover>div {
+    background-color: white;
+    cursor: default;
+  }
+
+  &:first-child>div {
+    font-size: 12px;
+    line-height: 13px;
+    font-weight: 600;
+    color: black;
+    height: 50px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  &:first-child:hover>div {
+    background-color: transparent;
+  }
+
+  // Months
+  div[data-month] {
+    display: flex;
+  }
+
+  // Days
+  span[data-day] {
+    width: 100%;
+    position: relative;
+
+    &.day-today {
+      border-left: 2px solid #CFE9EE;
+    }
+
+    .holidays {
+      display: block;
+      border-radius: 3px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 14px;
+      background-color: #2067b0;
+      z-index: 5;
+
+      &:hover {
+        .holiday-popup-wrapper {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.employee-info {
+  display: flex;
+  gap: 10px;
+
+  &__avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+    overflow: hidden;
+    flex-shrink: 0;
+
+    img {
+      display: block;
+      width: auto;
+      height: 100%;
+    }
+  }
+
+  &__name-and-post {
+    strong {
+      display: block;
+      font-size: 12px;
+      line-height: 13px;
+      font-weight: 600;
+      color: #535C69;
+    }
+
+    small {
+      font-size: 10px;
+      line-height: 11px;
+      color: #717A84;
+    }
+  }
+}
