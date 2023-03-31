@@ -1,4 +1,41 @@
-.employees-holidays-graph__row {
+.employees-holidays-graph {
+  position: relative;
+
+  &__current-day {
+    position: absolute;
+    left: 510px;
+    top: 25px;
+    height: calc(100% - 25px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+
+    &:after {
+      content: "";
+      display: block;
+      width: 2px;
+      height: 100%;
+      background-color: #CFE9EE;
+    }
+
+    span {
+      display: flex;
+      height: 23px;
+      align-items: center;
+      white-space: nowrap;
+      background-color: #CFE9EE;
+      border-radius: 5px;
+      padding: 0 4px;
+      font-size: 12px;
+      line-height: 15px;
+      font-weight: 600;
+      color: black;
+    }
+  }
+}
+
+.employees-holidays-graph-row {
   display: grid;
   grid-template-columns: 200px repeat(12, 1fr);
   
@@ -24,7 +61,7 @@
     cursor: default;
   }
 
-  &:first-child>div {
+  &.months>div {
     font-size: 12px;
     line-height: 13px;
     font-weight: 600;
@@ -34,33 +71,36 @@
     padding-bottom: 0;
   }
 
-  &:first-child:hover>div {
+  &.months:hover>div {
     background-color: transparent;
   }
 
   // Months
   div[data-month] {
     display: flex;
+    padding: 0;
   }
 
   // Days
   span[data-day] {
     width: 100%;
+    flex-grow: 1;
     position: relative;
-
-    &.day-today {
-      border-left: 2px solid #CFE9EE;
-    }
 
     .holidays {
       display: block;
       border-radius: 3px;
       position: absolute;
-      top: 0;
+      top: 50%;
       left: 0;
       height: 14px;
+      margin-top: -7px;
       background-color: #2067b0;
       z-index: 5;
+
+      &.past {
+        background-color: #E1E1E1;
+      }
 
       &:hover {
         .holiday-popup-wrapper {

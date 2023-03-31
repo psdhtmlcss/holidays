@@ -19,6 +19,14 @@ const employeesHolidaysData = [
   {
     holidays: [
       {
+        start: '2023-02-15',
+        end: '2023-02-25'
+      },
+      {
+        start: '2023-03-29',
+        end: '2023-04-25'
+      },
+      {
         start: '2023-09-15',
         end: '2023-09-15'
       },
@@ -63,4 +71,4 @@ const employeesHolidaysData = [
 ];
 
 window.renderGraph.render(holidaysData);
-// window.renderEmployeesGraph.render(employeesHolidaysData);
+window.renderEmployeesGraph.render(employeesHolidaysData);
