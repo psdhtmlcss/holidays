@@ -138,7 +138,11 @@
           <input type="text" class="form-input" placeholder="Имя сотрудника">
         </div>
       </div>
-      <div class="employees-holidays-graph" id="employeesGraph"></div>
+      <div class="employees-holidays-graph" id="employeesGraph">
+        <div class="employees-holidays-graph__current-day">
+          <span></span>
+        </div>
+      </div>
       <template id="employeeHolidayPopup">
         <div class="holiday-popup-wrapper">
           <div class="holiday-popup">
@@ -150,161 +154,6 @@
           </div>
         </div>
       </template>
-      <div style="height:50px;"></div>
-      <div class="employees-holidays-graph" id="">
-        <div class="employees-holidays-graph__current-day">
-          <span>Сегодня 29 марта</span>
-        </div>
-        <div class="employees-holidays-graph-row months">
-          <div>Сотрудник</div>
-          <div>Янв</div>
-          <div>Фев</div>
-          <div>Март</div>
-          <div>Апрель</div>
-          <div>Май</div>
-          <div>Июнь</div>
-          <div>Июль</div>
-          <div>Авг</div>
-          <div>Сент</div>
-          <div>Окт</div>
-          <div>Нояб</div>
-          <div>Дек</div>
-        </div>
-        <div class="employees-holidays-graph-row">
-          <div>
-            <div class="employee-info">
-              <div class="employee-info__avatar"><img src="https://bitrix.axbit.ru/upload/resize_cache/main/6fb/3qx3flbeo8gf86wfc5gnpcka1iu7i0cb/212_212_1/IMG_46262%201%202.png" alt=""></div>
-              <div class="employee-info__name-and-post">
-                <strong>Попков Александр</strong>
-                <small>Lead UI/UX</small>
-              </div>
-            </div>
-          </div>
-          <div data-month="0"></div>
-          <div data-month="1"></div>
-          <div data-month="2">
-            <span data-day="1"></span>
-            <span data-day="2"></span>
-            <span data-day="3"></span>
-            <span data-day="4"></span>
-            <span data-day="5"></span>
-            <span data-day="6"></span>
-            <span data-day="7"></span>
-            <span data-day="8"></span>
-            <span data-day="9"></span>
-            <span data-day="10"></span>
-            <span data-day="11"></span>
-            <span data-day="12"></span>
-            <span data-day="13"></span>
-            <span data-day="14"></span>
-            <span data-day="15"></span>
-            <span data-day="16"></span>
-            <span data-day="17"></span>
-            <span data-day="18"></span>
-            <span data-day="19"></span>
-            <span data-day="20"></span>
-            <span data-day="21"></span>
-            <span data-day="22"></span>
-            <span data-day="23"></span>
-            <span data-day="24"></span>
-            <span data-day="25">
-              <span class="holidays" style="width: 140px; background: linear-gradient(90deg, #e1e1e1 0%, #e1e1e1 10%, #2067B0 10%, #2067B0 100%)">
-                <div class="holiday-popup-wrapper" style="margin-left: -22px;">
-                  <div class="holiday-popup">
-                    <div class="holiday-popup__top">
-                      <span class="start-day">25 Марта</span> <span class="end-day">– 25 Апреля</span>
-                      <div class="total-days">30 дней</div>
-                    </div>
-                    <div class="holiday-popup__link"><a href="">Скорректировать</a></div>
-                  </div>
-                </div>
-              </span>
-            </span>
-            <span data-day="26"></span>
-            <span data-day="27"></span>
-            <span data-day="28"></span>
-            <span data-day="29" class="day-today"></span>
-            <span data-day="30"></span>
-            <span data-day="31"></span>
-          </div>
-          <div data-month="3"></div>
-          <div data-month="4"></div>
-          <div data-month="5"></div>
-          <div data-month="6"></div>
-          <div data-month="7"></div>
-          <div data-month="8"></div>
-          <div data-month="9"></div>
-          <div data-month="10"></div>
-          <div data-month="11"></div>
-        </div>
-        <div class="employees-holidays-graph-row">
-          <div>
-            <div class="employee-info">
-              <div class="employee-info__avatar"><img src="https://bitrix.axbit.ru/upload/resize_cache/main/fe9/j3pzgvw6xouterb6cx0zpn21wrqfnijc/212_212_1/d91125c7-5f6e-4eac-b070-7ac6629df933.png" alt=""></div>
-              <div class="employee-info__name-and-post">
-                <strong>Ярослава Дубцова</strong>
-                <small>Lead UI/UX</small>
-              </div>
-            </div>
-          </div>
-          <div data-month="0"></div>
-          <div data-month="1"></div>
-          <div data-month="2">
-            <span data-day="1"></span>
-            <span data-day="2"></span>
-            <span data-day="3"></span>
-            <span data-day="4"></span>
-            <span data-day="5"></span>
-            <span data-day="6"></span>
-            <span data-day="7"></span>
-            <span data-day="8"></span>
-            <span data-day="9"></span>
-            <span data-day="10"></span>
-            <span data-day="11"></span>
-            <span data-day="12"></span>
-            <span data-day="13"></span>
-            <span data-day="14"></span>
-            <span data-day="15"></span>
-            <span data-day="16"></span>
-            <span data-day="17"></span>
-            <span data-day="18"></span>
-            <span data-day="19"></span>
-            <span data-day="20"></span>
-            <span data-day="21"></span>
-            <span data-day="22"></span>
-            <span data-day="23"></span>
-            <span data-day="24"></span>
-            <span data-day="25">
-              <span class="holidays" style="width: 140px; background: linear-gradient(90deg, #e1e1e1 0%, #e1e1e1 10%, #2067B0 10%, #2067B0 100%)">
-                <div class="holiday-popup-wrapper" style="margin-left: -22px;">
-                  <div class="holiday-popup">
-                    <div class="holiday-popup__top">
-                      <span class="start-day">25 Марта</span> <span class="end-day">– 25 Апреля</span>
-                      <div class="total-days">30 дней</div>
-                    </div>
-                    <div class="holiday-popup__link"><a href="">Скорректировать</a></div>
-                  </div>
-                </div>
-              </span>
-            </span>
-            <span data-day="26"></span>
-            <span data-day="27"></span>
-            <span data-day="28"></span>
-            <span data-day="29" class="day-today"></span>
-            <span data-day="30"></span>
-            <span data-day="31"></span>
-          </div>
-          <div data-month="3"></div>
-          <div data-month="4"></div>
-          <div data-month="5"></div>
-          <div data-month="6"></div>
-          <div data-month="7"></div>
-          <div data-month="8"></div>
-          <div data-month="9"></div>
-          <div data-month="10"></div>
-          <div data-month="11"></div>
-        </div>
-      </div>
     </div>
 
   </div>
